@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 
 const NavBar: React.FC = () => (
-  <nav className="m-2 text-xl text-gray-100 bg-green-500">
+  <nav className="py-2 text-xl text-gray-100 font-medium bg-gray-800">
     <ul className="grid grid-cols-fit justify-around justify-items-center">
       <li>
         <Link to="/">Home</Link>

@@ -1,14 +1,15 @@
-import { MdStore as icon } from "react-icons/md";
+import { MdRestaurant as icon } from "react-icons/md";
 
 export default {
-  name: "store",
-  title: "Store",
+  name: "dish",
+  title: "Dish",
   type: "document",
   icon,
   fields: [
     {
       name: "name",
       title: "Name",
+      description: "Name of the dish",
       type: "string",
     },
     {
@@ -17,14 +18,14 @@ export default {
       type: "slug",
       options: {
         source: "name",
-        maxLength: 50,
+        maxLength: 100,
       },
     },
     {
       name: "description",
       title: "Description",
+      description: "A little bit detail about this dish",
       type: "text",
-      description: "What do you have to say about this store?",
     },
     {
       name: "image",
@@ -35,10 +36,9 @@ export default {
       },
     },
     {
-      name: "dishes",
-      title: "Dishes",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "dish" }] }],
+      name: "price",
+      title: "Price",
+      type: "number",
     },
   ],
 };

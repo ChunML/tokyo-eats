@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "./Container";
 import NavBar from "./NavBar";
 
 interface LayoutProps {
@@ -6,9 +7,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-  <div className="max-w-screen-lg mx-auto p-5 text-gray-700">
+  <div>
     <NavBar />
-    {children}
+    <Container>{children}</Container>
   </div>
 );
 
