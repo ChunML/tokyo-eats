@@ -14,11 +14,13 @@ const Dish: React.FC<DishProps> = ({ data }) => {
 
   return (
     <div className="grid grid-cols-2 gap-x-12 items-center my-6 border-solid border-2 border-gray-2 rounded-xl p-6 shadow-2xl">
-      <Img fluid={dish.image.asset.fluid} />
       <div className="text-center">
-        <h2 className="text-xl font-medium mb-4 bg-yellow-400 transform -rotate-2">
+        <Img fluid={dish.image.asset.fluid} />
+        <h2 className="text-xl font-medium mb-4 bg-yellow-400 transform -rotate-2 -translate-y-5">
           {dish.name}
         </h2>
+      </div>
+      <div className="text-center">
         <p>{dish.description}</p>
       </div>
     </div>

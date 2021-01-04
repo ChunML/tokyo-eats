@@ -13,19 +13,19 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
   const stores = data.stores.nodes;
   return (
     <>
-      <h2 className="text-center text-2xl font-medium bg-green-400 p-2 rounded-2xl">
+      <h2 className="text-center text-2xl font-medium bg-green-400 p-2 rounded-2xl m-4 mb-10">
         Stores that you can choose from
       </h2>
       <div className="m-7 grid grid-cols-fit gap-x-7 text-center">
         {stores.map((store) => (
           <div
-            className="p-2 border-solid border-2 border-gray-300 rounded-lg shadow-2xl"
+            className="p-2 pb-4 border-solid border-2 border-gray-300 rounded-xl shadow-2xl"
             key={store.id}
           >
             <Link to={`/store/${store.slug.current}`}>
-              <p className="my-4 text-xl text-center hover:underline font-medium bg-yellow-300 transform -rotate-2">
+              <h2 className="my-4 text-xl text-center hover:text-white hover:bg-red-500 font-medium bg-yellow-300 transform -rotate-2">
                 {store.name}
-              </p>
+              </h2>
             </Link>
 
             <Img className="my-4" fixed={store.image.asset.fixed} />

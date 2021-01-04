@@ -21,7 +21,7 @@ const Store: React.FC<StoreProps> = ({ data }) => {
         <div className="border-solid border-2 rounded-xl border-gray-300 p-5 shadow-lg">
           <Img fluid={dish.image.asset.fluid} className="mb-2" />
           <Link to={`/dish/${dish.slug.current}`}>
-            <h2 className="text-center font-medium bg-yellow-400 transform -rotate-2 -translate-y-6">
+            <h2 className="text-center font-medium bg-yellow-400 hover:text-white hover:bg-red-500 transform -rotate-2 -translate-y-6">
               {dish.name}
             </h2>
           </Link>
