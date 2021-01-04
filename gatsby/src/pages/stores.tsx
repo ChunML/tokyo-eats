@@ -2,6 +2,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
 import { AllStoreType } from "../utils/types";
+import Banner from "../components/StoreBanner";
 
 interface StoresPageProps {
   data: {
@@ -13,10 +14,8 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
   const stores = data.stores.nodes;
   return (
     <>
-      <h2 className="text-center text-2xl font-medium bg-green-400 p-2 rounded-2xl m-4 mb-10">
-        Stores that you can choose from
-      </h2>
-      <div className="m-7 grid grid-cols-fit gap-7 text-center">
+      <Banner text="Stores that you can choose from" />
+      <div className="m-6 grid grid-cols-fit gap-7 text-center">
         {stores.map((store) => (
           <div
             className="p-2 pb-4 border-solid border-2 border-gray-300 rounded-xl shadow-2xl"
