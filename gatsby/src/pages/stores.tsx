@@ -16,7 +16,7 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
       <h2 className="text-center text-2xl font-medium bg-green-400 p-2 rounded-2xl m-4 mb-10">
         Stores that you can choose from
       </h2>
-      <div className="m-7 grid grid-cols-fit gap-x-7 text-center">
+      <div className="m-7 grid grid-cols-fit gap-7 text-center">
         {stores.map((store) => (
           <div
             className="p-2 pb-4 border-solid border-2 border-gray-300 rounded-xl shadow-2xl"
@@ -28,7 +28,7 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
               </h2>
             </Link>
 
-            <Img className="my-4" fixed={store.image.asset.fixed} />
+            <Img className="my-4" fluid={store.image.asset.fluid} />
             <p className="text-sm text-center">{store.description}</p>
           </div>
         ))}

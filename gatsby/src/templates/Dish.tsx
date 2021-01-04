@@ -33,6 +33,7 @@ export const query = graphql`
       id
       name
       description
+      price
       image {
         asset {
           fluid {

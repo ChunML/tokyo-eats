@@ -25,6 +25,11 @@ const Store: React.FC<StoreProps> = ({ data }) => {
               {dish.name}
             </h2>
           </Link>
+          <Link to={`/dish/${dish.slug.current}`}>
+            <p className="text-center w-1/2 mx-auto border-solid border-2 rounded-3xl border-red-500 p-2 px-7 hover:bg-red-500 hover:text-white">
+              ¥{dish.price}
+            </p>
+          </Link>
         </div>
       ))}
     </div>
@@ -52,6 +57,7 @@ export const query = graphql`
         slug {
           current
         }
+        price
         image {
           asset {
             fluid {
