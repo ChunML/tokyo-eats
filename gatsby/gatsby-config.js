@@ -17,4 +17,5 @@ export const plugins = [
       token: process.env.SANITY_TOKEN,
     },
   },
+  "gatsby-plugin-postcss",
 ];
