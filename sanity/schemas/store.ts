@@ -27,6 +27,12 @@ export default {
       description: "What do you have to say about this store?",
     },
     {
+      name: "location",
+      title: "Location",
+      type: "geopoint",
+      description: "The store localtion",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
