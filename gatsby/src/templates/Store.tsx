@@ -3,6 +3,7 @@ import React from "react";
 import Img from "gatsby-image";
 import { StoreType } from "../utils/types";
 import Banner from "../components/Banner";
+import formatMoney from "../utils/formatMoney";
 
 interface StoreProps {
   data: {
@@ -27,7 +28,7 @@ const Store: React.FC<StoreProps> = ({ data }) => {
             </Link>
             <Link to={`/dish/${dish.slug.current}`}>
               <p className="text-center w-1/2 mx-auto border-solid border-2 rounded-3xl border-red-500 p-2 px-7 hover:bg-red-500 hover:text-white">
-                ¥{dish.price}
+                {formatMoney(dish.price)}
               </p>
             </Link>
           </div>

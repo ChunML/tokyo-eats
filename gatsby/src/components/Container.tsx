@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 
 const Container: React.FC<LayoutProps> = ({ children }) => (
-  <div className="flex flex-col h-screen max-w-screen-lg mx-auto p-5 mb-auto text-gray-700">
+  <div className="flex flex-col h-screen max-w-screen-lg mx-auto p-5 mb-auto text-gray-600">
     {children}
   </div>
 );
