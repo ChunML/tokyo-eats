@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
 import { AllStoreType, DishType } from "../utils/types";
-import Banner from "../components/StoreBanner";
+import Banner from "../components/Banner";
 
 interface DishProps {
   data: {

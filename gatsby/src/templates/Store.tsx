@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import Img from "gatsby-image";
 import { StoreType } from "../utils/types";
-import Banner from "../components/StoreBanner";
+import Banner from "../components/Banner";
 
 interface StoreProps {
   data: {
@@ -16,7 +16,7 @@ const Store: React.FC<StoreProps> = ({ data }) => {
   return (
     <>
       <Banner text={store.name} />
-      <div className="grid grid-cols-2 mt-6 gap-x-10">
+      <div className="grid grid-cols-2 my-6 gap-x-10">
         {store.dishes.map((dish) => (
           <div className="border-solid border-2 rounded-xl border-gray-300 p-5 shadow-lg">
             <Img fluid={dish.image.asset.fluid} className="mb-2" />
