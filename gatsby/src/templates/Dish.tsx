@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Img from "gatsby-image";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { navigate } from "@reach/router";
@@ -17,9 +17,7 @@ interface DishProps {
 
 const Dish: React.FC<DishProps> = ({ data }) => {
   const { dish, store } = data;
-  const [value, setValue] = useState(0);
   const [order, setOrder] = useContext(OrderContext);
-  console.log(order[dish.id]);
 
   return (
     <>
