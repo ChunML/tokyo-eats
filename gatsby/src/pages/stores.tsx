@@ -27,7 +27,10 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
               </h2>
             </Link>
 
-            <Img className="my-4" fluid={store.image.asset.fluid} />
+            <Img
+              className="my-4 w-40 mx-auto"
+              fluid={store.image.asset.fluid}
+            />
             <p className="text-sm text-center">{store.description}</p>
           </div>
         ))}
