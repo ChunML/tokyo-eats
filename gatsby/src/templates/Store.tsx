@@ -56,6 +56,10 @@ export const query = graphql`
           }
         }
       }
+      location {
+        lat
+        lng
+      }
       dishes {
         id
         name

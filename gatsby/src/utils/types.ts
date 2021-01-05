@@ -23,6 +23,10 @@ export interface StoreType {
   slug: {
     current: string;
   };
+  location: {
+    lat: number;
+    lng: number;
+  };
   image: {
     asset: {
       fluid: FluidObject;
