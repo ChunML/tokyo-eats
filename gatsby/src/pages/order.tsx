@@ -57,6 +57,14 @@ const OrderPage: React.FC<OrderPageProps> = ({ data }) => {
             <div />
             <p className="font-bold">Total</p>
             <p className="w-1/2 text-right">{formatMoney(orderSum * 1.08)}</p>
+            <Link to="/checkout" className="col-span-3 my-4">
+              <button
+                type="button"
+                className="p-4 bg-red-400 rounded-xl text-white"
+              >
+                Checkout
+              </button>
+            </Link>
           </div>
         )}
       </div>

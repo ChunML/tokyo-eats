@@ -87,13 +87,13 @@ const Dish: React.FC<DishProps> = ({ data }) => {
                 {formatMoney(dish.price * order[dish.id])}
               </p>
               <div />
-              <p>VAT</p>
+              <p className="font-bold">VAT</p>
               <p className="ml-auto">
                 {formatMoney(dish.price * order[dish.id] * 0.08)}
               </p>
               <hr className="col-span-3 my-4" />
               <div />
-              <p>Total</p>
+              <p className="font-bold">Total</p>
               <p className="ml-auto">
                 {formatMoney(dish.price * order[dish.id] * 1.08)}
               </p>
