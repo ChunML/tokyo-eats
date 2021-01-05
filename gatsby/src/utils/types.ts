@@ -41,3 +41,7 @@ export interface AllDishType {
   totalCount: number;
   nodes: DishType[];
 }
+
+export interface OrderStyle {
+  [id: string]: number;
+}
