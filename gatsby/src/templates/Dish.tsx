@@ -51,7 +51,10 @@ const Dish: React.FC<DishProps> = ({ data }) => {
             type="button"
             className="text-white bg-red-400 p-6 rounded-2xl flex-grow mx-8"
             disabled={!(order[dish.id] > 0)}
-            onClick={() => navigate("/order")}
+            onClick={() => {
+              localStorage.setItem("tokyoEatsOrder", JSON.stringify(order));
+              navigate("/order");
+            }}
           >
             Confirm Order
           </button>

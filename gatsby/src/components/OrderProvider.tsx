@@ -7,7 +7,11 @@ export const OrderContext = React.createContext<
 >([{}, () => {}]);
 
 const OrderContextProvider = ({ children }) => {
-  const [order, setOder] = useState({});
+  const [order, setOder] = useState(
+    localStorage.getItem("tokyoEatsOrder")
+      ? JSON.parse(localStorage.getItem("tokyoEatsOrder"))
+      : {}
+  );
 
   return (
     <OrderContext.Provider value={[order, setOder]}>
