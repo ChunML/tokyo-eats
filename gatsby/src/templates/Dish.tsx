@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import React, { useState } from "react";
 import Img from "gatsby-image";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -21,6 +21,14 @@ const Dish: React.FC<DishProps> = ({ data }) => {
     <>
       <Banner text={store.nodes[0].name} />
       <div className="grid grid-cols-2 gap-x-12 items-center my-6 border-solid border-2 border-gray-2 rounded-xl p-5 shadow-2xl">
+        <Link
+          className="col-span-2 mb-5"
+          to={`/store/${store.nodes[0].slug.current}`}
+        >
+          <p className="text-center border-solid border-2 border-yellow-400 rounded-2xl mx-auto w-2/5 py-2 hover:bg-yellow-400 hover:text-white">
+            Back to store
+          </p>
+        </Link>
         <div className="text-center">
           <Img fluid={dish.image.asset.fluid} />
           <h2 className="text-xl font-medium mb-4 bg-yellow-400 transform -rotate-2 -translate-y-5">
@@ -97,6 +105,9 @@ export const query = graphql`
     ) {
       nodes {
         name
+        slug {
+          current
+        }
       }
     }
   }
