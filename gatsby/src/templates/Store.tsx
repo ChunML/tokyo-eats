@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import { StoreType } from "../utils/types";
 import Banner from "../components/Banner";
 import formatMoney from "../utils/formatMoney";
+import StoreMap from "../components/StoreMap";
 
 interface StoreProps {
   data: {
@@ -37,6 +38,7 @@ const Store: React.FC<StoreProps> = ({ data }) => {
           </div>
         ))}
       </div>
+      <StoreMap />
     </>
   );
 };
