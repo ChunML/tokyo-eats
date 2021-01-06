@@ -18,11 +18,15 @@ const Store: React.FC<StoreProps> = ({ data }) => {
   return (
     <>
       <Banner text={store.name} />
+      <hr />
+      <h2 className="text-center font-bold text-2xl mt-4 mx-auto w-1/2 py-2 rounded-2xl bg-gray-200">
+        MENU
+      </h2>
       <div className="grid grid-cols-2 my-6 gap-x-10">
         {store.dishes.map((dish) => (
           <div
             key={dish.id}
-            className="border-solid border-2 rounded-xl border-gray-300 p-5 shadow-lg"
+            className="border-solid border-2 rounded-xl border-gray-300 p-5 shadow-lg mb-6"
           >
             <Img fluid={dish.image.asset.fluid} className="mb-2" />
             <Link to={`/dish/${dish.slug.current}`}>
@@ -38,7 +42,11 @@ const Store: React.FC<StoreProps> = ({ data }) => {
           </div>
         ))}
       </div>
-      <div className="my-8 rounded-xl">
+      <hr />
+      <h2 className="text-center font-bold text-2xl mt-4 mx-auto w-1/2 py-2 rounded-2xl bg-gray-200">
+        ADDRESS
+      </h2>
+      <div className="my-8 border-solid border-2 border-gray-2 p-1 rounded-xl shadow-lg">
         <StoreMap
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_MAPS_KEY}`}
           loadingElement={<div style={{ height: `100%` }} />}
