@@ -29,8 +29,14 @@ const OrderPage: React.FC<OrderPageProps> = ({ data }) => {
           <p>You haven&apos;t ordered anything yet!</p>
         )}
         {dishes.map((dish) => (
-          <div key={dish.id} className="grid grid-cols-3 items-center">
-            <Img className="w-20 mx-auto" fluid={dish.image.asset.fluid} />
+          <div
+            key={dish.id}
+            className="grid sm:grid-cols-3 grid-cols-1 items-center"
+          >
+            <Img
+              className="w-20 mx-auto sm:mb-0 mb-2"
+              fluid={dish.image.asset.fluid}
+            />
             <Link
               className="bg-yellow-400 p-2 rounded-xl hover:bg-red-400 hover:text-white"
               to={`/dish/${dish.slug.current}`}
@@ -39,10 +45,10 @@ const OrderPage: React.FC<OrderPageProps> = ({ data }) => {
                 {dish.name} x {order[dish.id]}
               </div>
             </Link>
-            <p className="w-1/2 text-right">
+            <p className="sm:w-1/2 sm:text-right">
               {formatMoney(order[dish.id] * dish.price)}
             </p>
-            <hr className="col-span-3 my-4" />
+            <hr className="sm:col-span-3 my-4" />
           </div>
         ))}
         {dishes.length > 0 && (

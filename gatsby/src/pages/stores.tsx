@@ -15,7 +15,7 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
   return (
     <>
       <Banner text="Stores that you can choose from" />
-      <div className="m-6 grid grid-cols-fit gap-7 text-center">
+      <div className="m-6 grid md:grid-cols-2 grid-cols-1 gap-7 text-center">
         {stores.map((store) => (
           <div
             className="p-2 pb-4 border-solid border-2 border-gray-300 rounded-xl shadow-2xl"

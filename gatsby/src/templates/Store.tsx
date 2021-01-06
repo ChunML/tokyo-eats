@@ -24,7 +24,7 @@ const Store: React.FC<StoreProps> = ({ data }) => {
       <h2 className="text-center font-bold text-2xl mt-4 mx-auto w-1/2 py-2 rounded-2xl bg-gray-200">
         MENU
       </h2>
-      <div className="grid grid-cols-2 my-6 gap-x-10">
+      <div className="grid md:grid-cols-2 grid-cols-1 my-6 gap-x-10">
         {store.dishes.map((dish) => (
           <div
             key={dish.id}

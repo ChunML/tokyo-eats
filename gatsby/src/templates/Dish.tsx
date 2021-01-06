@@ -22,7 +22,7 @@ const Dish: React.FC<DishProps> = ({ data }) => {
   return (
     <>
       <Banner text={store.nodes[0].name} />
-      <div className="grid grid-cols-2 gap-x-12 items-center my-6 border-solid border-2 border-gray-2 rounded-xl p-5 shadow-2xl">
+      <div className="grid grid-cols-2 gap-x-12 items-center my-6 border-solid border-2 border-gray-2 rounded-xl p-5 shadow-2xl sm:text-base text-sm">
         <Link
           className="col-span-2 mb-6"
           to={`/store/${store.nodes[0].slug.current}`}
@@ -49,7 +49,7 @@ const Dish: React.FC<DishProps> = ({ data }) => {
           </button>
           <button
             type="button"
-            className="text-white bg-red-400 p-6 rounded-2xl flex-grow mx-8"
+            className="text-white bg-red-400 p-6 rounded-2xl flex-grow sm:mx-8 mx-2"
             disabled={!(order[dish.id] > 0)}
             onClick={() => {
               localStorage.setItem("tokyoEatsOrder", JSON.stringify(order));
@@ -103,7 +103,7 @@ const Dish: React.FC<DishProps> = ({ data }) => {
         )}
         <div className="text-center">
           <Img fluid={dish.image.asset.fluid} />
-          <h2 className="text-xl font-medium mb-4 bg-yellow-400 transform -rotate-2 -translate-y-5">
+          <h2 className="sm:text-xl text-sm font-medium mb-4 bg-yellow-400 transform -rotate-2 -translate-y-5">
             {dish.name}
           </h2>
         </div>

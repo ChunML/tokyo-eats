@@ -17,7 +17,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   return (
     <>
       <Banner text="Hot dishes right now!!!" />
-      <div className="grid grid-cols-2 my-6 gap-x-10 items-start">
+      <div className="grid md:grid-cols-2 grid-cols-1 my-6 gap-x-10 items-start">
         {dishes.map((dish) => (
           <div
             key={dish.id}
