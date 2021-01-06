@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby";
 import React, { useState } from "react";
 import Img from "gatsby-image";
+import { FaHeart } from "react-icons/fa";
 import { StoreType } from "../utils/types";
 import Banner from "../components/Banner";
 import formatMoney from "../utils/formatMoney";
@@ -35,8 +36,15 @@ const Store: React.FC<StoreProps> = ({ data }) => {
                 {dish.name}
               </h2>
             </Link>
-            <Link to={`/dish/${dish.slug.current}`}>
-              <p className="text-center w-1/2 mx-auto border-solid border-2 rounded-3xl border-red-500 p-2 px-7 hover:bg-red-500 hover:text-white">
+            <Link
+              className="grid grid-cols-3 items-center justify-items-center"
+              to={`/dish/${dish.slug.current}`}
+            >
+              <p className="flex items-center">
+                <span className="inline mr-1">{dish.votes}</span>
+                <FaHeart className="inline text-red-400" />
+              </p>
+              <p className="text-center col-span-2 border-solid border-2 rounded-3xl border-red-500 p-2 px-7 hover:bg-red-500 hover:text-white w-4/5">
                 {formatMoney(dish.price)}
               </p>
             </Link>
@@ -99,6 +107,7 @@ export const query = graphql`
           current
         }
         price
+        votes
         image {
           asset {
             fluid {

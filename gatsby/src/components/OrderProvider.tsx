@@ -8,7 +8,7 @@ export const OrderContext = React.createContext<
 
 const OrderContextProvider = ({ children }) => {
   const [order, setOder] = useState(
-    localStorage.getItem("tokyoEatsOrder")
+    typeof window !== "undefined" && localStorage.getItem("tokyoEatsOrder")
       ? JSON.parse(localStorage.getItem("tokyoEatsOrder"))
       : {}
   );

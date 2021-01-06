@@ -5,6 +5,7 @@ export interface DishType {
   name: string;
   description: string;
   price: number;
+  votes: number;
   slug: {
     current: string;
   };

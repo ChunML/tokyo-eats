@@ -40,5 +40,10 @@ export default {
       title: "Price",
       type: "number",
     },
+    {
+      name: "votes",
+      title: "Votes",
+      type: "number",
+    },
   ],
 };
