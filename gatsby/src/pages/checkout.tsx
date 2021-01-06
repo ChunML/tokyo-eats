@@ -52,8 +52,8 @@ const CheckoutPage: React.FC = () => {
       >
         {errors.length > 0 && (
           <fieldset className="m-4 mb-8 grid grid-cols-4 items-center justify-items-center">
-            <div />
-            <ul className="col-span-3 rounded-xl w-full text-red-500 text-sm border-2 border-red-400 rounded-lg p-2">
+            <div className="sm:col-span-1 col-span-2" />
+            <ul className="sm:col-span-3 col-span-2 rounded-xl w-full text-red-500 text-sm border-2 border-red-400 rounded-lg p-2">
               {errors.map((error) => (
                 <li key={error.slice(0, error.indexOf(" "))}>{error}</li>
               ))}
@@ -61,37 +61,43 @@ const CheckoutPage: React.FC = () => {
           </fieldset>
         )}
         <fieldset className="m-4 grid grid-cols-4 items-center justify-items-center">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name" className="sm:col-span-1 col-span-2">
+            Name
+          </label>
           <input
             type="text"
             name="name"
             value={values.name}
             placeholder="Enter your name..."
-            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full col-span-3 focus:ring focus:border-blue-400"
+            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full sm:col-span-3 col-span-2 focus:ring focus:border-blue-400"
             style={{ outline: "none" }}
             onChange={handleInputChange}
           />
         </fieldset>
         <fieldset className="col-span-2 m-4 grid grid-cols-4 items-center justify-items-center">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="sm:col-span-1 col-span-2">
+            Email
+          </label>
           <input
             type="email"
             name="email"
             value={values.email}
             placeholder="And here is your email..."
-            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full col-span-3 focus:ring focus:border-blue-400"
+            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full sm:col-span-3 col-span-2 focus:ring focus:border-blue-400"
             style={{ outline: "none" }}
             onChange={handleInputChange}
           />
         </fieldset>
         <fieldset className="col-span-2 m-4 grid grid-cols-4 items-center justify-items-center">
-          <label htmlFor="address">Address</label>
+          <label htmlFor="address" className="sm:col-span-1 col-span-2">
+            Address
+          </label>
           <input
             type="text"
             name="address"
             value={values.address}
             placeholder="It's where you live homie..."
-            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full col-span-3 focus:ring focus:border-blue-400"
+            className="border-solid border-blue-200 border-2 rounded-xl p-3 mx-4 w-full sm:col-span-3 col-span-2 focus:ring focus:border-blue-400"
             style={{ outline: "none" }}
             onChange={handleInputChange}
           />
