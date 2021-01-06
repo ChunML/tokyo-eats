@@ -60,7 +60,7 @@ const OrderPage: React.FC<OrderPageProps> = ({ data }) => {
             <Link to="/checkout" className="col-span-3 my-4">
               <button
                 type="button"
-                className="p-4 bg-red-400 rounded-xl text-white"
+                className="p-4 px-16 bg-red-400 rounded-xl text-white"
               >
                 Checkout
               </button>
