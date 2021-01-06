@@ -16,6 +16,11 @@ export interface DishType {
   };
 }
 
+export interface LocationType {
+  lat: number;
+  lng: number;
+}
+
 export interface StoreType {
   id: string;
   name: string;
@@ -23,10 +28,7 @@ export interface StoreType {
   slug: {
     current: string;
   };
-  location: {
-    lat: number;
-    lng: number;
-  };
+  locations: LocationType[];
   image: {
     asset: {
       fluid: FluidObject;

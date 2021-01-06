@@ -27,10 +27,11 @@ export default {
       description: "What do you have to say about this store?",
     },
     {
-      name: "location",
-      title: "Location",
-      type: "geopoint",
-      description: "The store localtion",
+      name: "locations",
+      title: "Locations",
+      type: "array",
+      of: [{ type: "geopoint" }],
+      description: "The store localtions",
     },
     {
       name: "image",

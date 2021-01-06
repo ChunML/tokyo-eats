@@ -12,7 +12,7 @@ interface StoreMapProps {
 }
 
 const StoreMap: React.FC<StoreMapProps> = ({ lat, lng }) => (
-  <GoogleMap defaultZoom={14} defaultCenter={{ lat, lng }}>
+  <GoogleMap defaultZoom={15} center={{ lat, lng }}>
     {" "}
     <Marker position={{ lat, lng }} />
   </GoogleMap>

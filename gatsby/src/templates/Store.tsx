@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import Img from "gatsby-image";
 import { StoreType } from "../utils/types";
 import Banner from "../components/Banner";
@@ -14,6 +14,7 @@ interface StoreProps {
 
 const Store: React.FC<StoreProps> = ({ data }) => {
   const { store } = data;
+  const [marker, setMarker] = useState({ lat: null, lng: null });
 
   return (
     <>
@@ -46,15 +47,27 @@ const Store: React.FC<StoreProps> = ({ data }) => {
       <h2 className="text-center font-bold text-2xl mt-4 mx-auto w-1/2 py-2 rounded-2xl bg-gray-200">
         ADDRESS
       </h2>
-      <div className="my-8 border-solid border-2 border-gray-2 p-1 rounded-xl shadow-lg">
-        <StoreMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_MAPS_KEY}`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-          lat={store.location.lat}
-          lng={store.location.lng}
-        />
+      <div className="my-8 border-solid border-2 border-gray-2 p-1 rounded-xl shadow-lg text-center">
+        {store.locations.map(({ lat, lng }, id) => (
+          <button
+            type="button"
+            key={`${lat}-${lng}`}
+            className="m-4 p-2 bg-yellow-400 rounded-xl shadow-lg"
+            onClick={() => setMarker({ lat, lng })}
+          >
+            {`Address ${id}`}
+          </button>
+        ))}
+        {marker.lat && marker.lng && (
+          <StoreMap
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_MAPS_KEY}`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            lat={marker.lat}
+            lng={marker.lng}
+          />
+        )}
       </div>
     </>
   );
@@ -75,7 +88,7 @@ export const query = graphql`
           }
         }
       }
-      location {
+      locations {
         lat
         lng
       }
