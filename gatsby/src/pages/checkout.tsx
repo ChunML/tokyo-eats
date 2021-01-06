@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Banner from "../components/Banner";
+import { OrderContext } from "../components/OrderProvider";
 
 const CheckoutPage: React.FC = () => {
+  const [, setOrder] = useContext(OrderContext);
   const [infoSent, setInfoSent] = useState(false);
   const [values, setValues] = useState({ name: "", email: "", address: "" });
   const [errors, setErrors] = useState([]);
@@ -25,6 +27,8 @@ const CheckoutPage: React.FC = () => {
     }
 
     if (!hasErrors) {
+      localStorage.removeItem("tokyoEatsOrder");
+      setOrder({});
       setInfoSent(true);
     }
   };
