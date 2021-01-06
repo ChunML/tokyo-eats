@@ -2,11 +2,11 @@ import { Link } from "gatsby";
 import React from "react";
 
 const NavBar: React.FC = () => (
-  <nav className="py-2 text-xl text-gray-100 font-medium bg-gray-800 mb-8">
+  <nav className="py-3 text-xl text-gray-100 font-medium bg-gray-800 mb-8">
     <ul className="grid grid-cols-fit justify-around justify-items-center">
       <li>
         <Link className="hover:text-red-400 hover:underline" to="/">
-          Home
+          Hot Now!
         </Link>
       </li>
       <li>

@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => (
-  <div>
+  <div className="font-mono">
     <NavBar />
     <Container>
       {children}

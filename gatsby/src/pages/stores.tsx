@@ -22,7 +22,7 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
             key={store.id}
           >
             <Link to={`/store/${store.slug.current}`}>
-              <h2 className="my-4 text-xl text-center hover:text-white hover:bg-red-500 font-medium bg-yellow-300 transform -rotate-2">
+              <h2 className="my-4 text-xl text-center hover:text-white hover:bg-red-500 font-bold bg-yellow-300 transform -rotate-2">
                 {store.name}
               </h2>
             </Link>
@@ -31,7 +31,7 @@ const StoresPage: React.FC<StoresPageProps> = ({ data }) => {
               className="my-4 w-40 mx-auto"
               fluid={store.image.asset.fluid}
             />
-            <p className="text-sm text-center">{store.description}</p>
+            <p className="text-sm text-justify px-4">{store.description}</p>
           </div>
         ))}
       </div>
