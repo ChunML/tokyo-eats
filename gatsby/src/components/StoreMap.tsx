@@ -1,10 +1,20 @@
 import React from "react";
-import { GoogleApiWrapper, Map } from "google-maps-react";
+import {
+  GoogleMap,
+  Marker,
+  withGoogleMap,
+  withScriptjs,
+} from "react-google-maps";
 
-const StoreMap: React.FC = ({ google }) => (
-  <Map google={google} className="max-w-screen-lg p-2 max-h-80" />
+interface StoreMapProps {
+  lat: number;
+  lng: number;
+}
+
+const StoreMap: React.FC<StoreMapProps> = ({ lat, lng }) => (
+  <GoogleMap defaultZoom={14} defaultCenter={{ lat, lng }}>
+    {" "}
+    <Marker position={{ lat, lng }} />
+  </GoogleMap>
 );
-
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyA6AeC5dGW3SAdWY8Xz32za_XBQLLwBHng",
-})(StoreMap);
+export default withScriptjs(withGoogleMap(StoreMap));

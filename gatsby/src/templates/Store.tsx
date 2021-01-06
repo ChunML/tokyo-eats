@@ -38,7 +38,16 @@ const Store: React.FC<StoreProps> = ({ data }) => {
           </div>
         ))}
       </div>
-      <StoreMap />
+      <div className="my-8 rounded-xl">
+        <StoreMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_MAPS_KEY}`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+          lat={store.location.lat}
+          lng={store.location.lng}
+        />
+      </div>
     </>
   );
 };
